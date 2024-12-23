@@ -94,7 +94,7 @@ const SwapComponent = () => {
 
     if (outputValue?.length === 0) setInputValue('')
 
-    // Resetting the isReversed value if its set
+    // Resetting  he isReversed value if its set
     if (isReversed.current) isReversed.current = false
   }, [outputValue, srcToken])
 

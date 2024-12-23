@@ -73,7 +73,7 @@ animation: zoom 16s alternate infinite;
     width: 100%;
   }
   .fufu {
-    margin: 0;
+    margin: 0; 
     font-size: 15px;
     width: 199rem
   }

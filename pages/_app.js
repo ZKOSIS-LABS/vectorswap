@@ -13,7 +13,7 @@ import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 
 // Define the custom Vector Smart Chain
 const vectorSmartChain = {
-  id: 420042, // Chain ID
+  id: 420044,       
   name: 'Vector Smart Chain',
   network: 'vector-smart-chain',
   nativeCurrency: {
@@ -22,12 +22,12 @@ const vectorSmartChain = {
     decimals: 18,
   },
   rpcUrls: {
-    default: { http: ['https://rpc.vscblockchain.org'] },
+    default: { http: ['https://testnet-rpc.vsgofficial.com/'] },
   },
   blockExplorers: {
-    default: { name: 'Vector Explorer', url: 'https://explorer.vscblockchain.org' },
+    default: { name: 'Vector Explorer', url: 'https://testnet-scan.vsgofficial.com' },
   },
-  testnet: false,
+  testnet: true,
 };
 
 // Configure chains
@@ -37,7 +37,7 @@ const { chains, provider } = configureChains(
     jsonRpcProvider({
       rpc: (chain) => {
         if (chain.id === vectorSmartChain.id) {
-          return { http: 'https://rpc.vscblockchain.org' };
+          return { http: 'https://testnet-rpc.vsgofficial.com/' };
         }
         return null;
       },
