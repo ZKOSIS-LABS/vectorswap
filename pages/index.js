@@ -26,7 +26,7 @@ export default function Home() {
         </button>
 
         <SideBar isOpen={isSideBarOpen} onClose={toggleSideBar} width="300px" position="left">
-          <img src='./uniswap.png' className='h-12 items-center justify-center' />
+          <img src='./uniswap.png' className='h-16 hohor' />
           <ul className="text-white kiki">
             <li>Home</li> 
             <li>Chat App</li>
