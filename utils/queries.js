@@ -39,15 +39,29 @@ export async function hasValidAllowance(owner, tokenName, amount) {
 
 export async function swapTokenToEth(tokenName, amount) {
   try {
-    const contractObj = await contract()
-    const data = await contractObj.swapTokenToEth(tokenName, toWei(amount))
+    // Check the user's allowance for the token first
+    const owner = await getOwnerAddress();  // Get the user's wallet address
+    const hasAllowance = await hasValidAllowance(owner, tokenName, amount);
 
-    const receipt = await data.wait()
-    return receipt
+    if (!hasAllowance) {
+      // If allowance is insufficient, increase it
+      await increaseAllowance(tokenName, amount);
+    }
+
+    // Now, proceed with the swap
+    const contractObj = await contract();
+    const data = await contractObj.swapTokenToEth(
+      tokenName,
+      toWei(amount),  // Ensure the amount is in the right units
+    );
+
+    const receipt = await data.wait();
+    return receipt;
   } catch (e) {
-    return parseErrorMsg(e)
+    return parseErrorMsg(e);
   }
 }
+
 
 export async function swapTokenToToken(srcToken, destToken, amount) {
   try {
