@@ -99,7 +99,7 @@ const SwapComponent = () => {
   }, [outputValue, srcToken])
 
   return (
-    <div className='bg-zinc-900 w-[35%] p-4 px-6 rounded-xl'>
+    <div className='bg-zinc-900 w-[35%] p-4 px-6 rounded-xl dede'>
       <div className='flex items-center justify-between py-4 px-1'>
         <p>Swap</p>
         <CogIcon className='h-6' />

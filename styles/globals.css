@@ -60,3 +60,22 @@ animation: zoom 16s alternate infinite;
       transform: scale(1.5);
   }
 }
+
+.dede {
+  width: auto;
+}
+.fufu {
+  margin: auto;
+  font-size: 20px;
+}
+@media screen and (max-width:700px) {
+  .dede {
+    width: 100%;
+  }
+  .fufu {
+    margin: 0;
+    font-size: 15px;
+    width: 199rem
+  }
+
+}
