@@ -16,7 +16,7 @@ const SideBar = ({
     backgroundColor: '#000718', // Light gray background
     borderRight: position === 'left' ? '1px solid #dee2e6' : undefined,
     borderLeft: position === 'right' ? '1px solidrgba(0, 0, 0, 0.83)' : undefined,
-    boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)',
+    boxShadow: '2px 0 5px rgba(0, 0, 0, 0.52)',
     padding: '20px',
     transition: 'transform 0.5s ease-in-out',
     transform: isOpen ? 'translateX(0)' : position === 'left' ? 'translateX(-100%)' : 'translateX(100%)',
