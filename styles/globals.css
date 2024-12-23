@@ -94,10 +94,24 @@ position: fixed;
   width: 100%;
   height: auto;
 }
-
-
-
-
+button {
+  display: flex;
+  flex-direction: row;
+}
+.h-5 {
+  margin-right: 10px;
+  transition: all 0.5ms ease;
+}
+.bubu {
+  transition: all 0.5ms ease;
+}
+.bubu:hover {
+  color: aliceblue;
+  transform: scale(1.03);
+}
+.jeje {
+  height: 3rem;
+}
 
 
 

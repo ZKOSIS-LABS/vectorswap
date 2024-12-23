@@ -13,10 +13,10 @@ const SideBar = ({
     [position]: 0, // Position based on the 'position' prop
     height: '100vh',
     width: width,
-    backgroundColor: '#170d28', // Light gray background
+    backgroundColor: '#1a1a43', // Light gray background
     borderRight: position === 'left' ? '1px solid #dee2e6' : undefined,
     borderLeft: position === 'right' ? '1px solidrgba(0, 0, 0, 0.83)' : undefined,
-    boxShadow: '2px 0 5px rgba(39, 110, 133, 0.52)',
+    boxShadow: '2px 0 5px hsl(240, 44.10%, 18.20%)',
     padding: '20px',
     transition: 'transform 0.5s ease-in-out',
     transform: isOpen ? 'translateX(0)' : position === 'left' ? 'translateX(-100%)' : 'translateX(100%)',
