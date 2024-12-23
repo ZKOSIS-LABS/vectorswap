@@ -4,9 +4,9 @@ import TokenBalance from './TokenBalance'
 const Footer = () => {
   return (
     <div className='flex fixed bottom-4 left-1/2 -translate-x-1/2'>
-      <TokenBalance name={'CoinA'} />
-      <TokenBalance name={'CoinB'} />
-      <TokenBalance name={'CoinC'} />
+      <TokenBalance name={'$MOB'} />
+      <TokenBalance name={'$XVX'} />
+      <TokenBalance name={'$XIX'} />
     </div>
   )
 }

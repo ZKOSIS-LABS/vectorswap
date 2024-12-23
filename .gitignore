@@ -1,3 +1,6 @@
 node_modules
 .next
 yarn.lock
+utils/CustomToken.json
+utils/CustomDex.json
+utils/CustomDex.json

@@ -1,5 +1,5 @@
 export const ETH = 'PLS'
-export const COINA = 'CoinA'
-export const COINB = 'CoinB'
-export const COINC = 'CoinC'
+export const $MOB = '$MOB'
+export const $XVX = '$XVX'
+export const $XIX = '$XIX'
 export const DEFAULT_VALUE = 'Select a token'
