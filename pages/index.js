@@ -17,7 +17,7 @@ export default function Home() {
 
 
 
-      <div className='w-full h-screen flex flex-col items-center justify-center bg-[#0c0f24]'>
+      <div className='w-full h-screen flex flex-col items-center justify-center bg-[#170d28]'>
       <button
           onClick={toggleSideBar}
           className='kabebe'
