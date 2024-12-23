@@ -26,7 +26,7 @@ export default function Home() {
         </button>
 
         <SideBar isOpen={isSideBarOpen} onClose={toggleSideBar} width="300px" position="left">
-          <h3 className="text-white text-xl font-semibold">MoonBoys Swap</h3>
+          <img src='./uniswap.png' className='h-12' />
           <ul className="text-white kiki">
             <li>Home</li> 
             <li>Chat App</li>
