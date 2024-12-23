@@ -1,4 +1,4 @@
-export const ETH = 'VSG'
+export const ETH = 'PLS'
 export const COINA = 'CoinA'
 export const COINB = 'CoinB'
 export const COINC = 'CoinC'
