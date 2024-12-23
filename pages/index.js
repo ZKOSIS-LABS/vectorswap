@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SwapComponent from '../components/SwapComponent';
-import SideBar from '../components/SideBar';
+import SideBar from '../components/Sidebar';
 
 export default function Home() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
