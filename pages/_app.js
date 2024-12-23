@@ -11,33 +11,33 @@ import {
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 
-// Define the custom Vector Smart Chain
-const vectorSmartChain = {
-  id: 420044,       
-  name: 'Vector Smart Chain',
-  network: 'vector-smart-chain',
+// Define the custom Pulse Chain
+const PulseChain = {
+  id: 943,       
+  name: 'Pulse Chain',
+  network: 'Pulse-chain',
   nativeCurrency: {
-    name: 'Vector Smart Gold',
-    symbol: 'VSG',
+    name: 'PulseX',
+    symbol: 'PLS',
     decimals: 18,
   },
   rpcUrls: {
-    default: { http: ['https://testnet-rpc.vsgofficial.com/'] },
+    default: { http: ['https://pulsechain-testnet-rpc.publicnode.com'] },
   },
   blockExplorers: {
-    default: { name: 'Vector Explorer', url: 'https://testnet-scan.vsgofficial.com' },
+    default: { name: 'Pulse Explorer', url: 'https://api.scan.v4.testnet.pulsechain.com' },
   },
   testnet: true,
 };
 
 // Configure chains
 const { chains, provider } = configureChains(
-  [vectorSmartChain], // Only Vector Smart Chain
+  [PulseChain], // Only Pulse Chain
   [
     jsonRpcProvider({
       rpc: (chain) => {
-        if (chain.id === vectorSmartChain.id) {
-          return { http: 'https://testnet-rpc.vsgofficial.com/' };
+        if (chain.id === PulseChain.id) {
+          return { http: 'https://pulsechain-testnet-rpc.publicnode.com' };
         }
         return null;
       },

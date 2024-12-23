@@ -24,7 +24,7 @@ export async function hasValidAllowance(owner, tokenName, amount) {
     const tokenContractObj = await tokenContract(address)
     const data = await tokenContractObj.allowance(
       owner,
-      '0xc7a7651483c9a62d6f7b2baa86cd4708fab66017',
+      '0x4F4e508658Aa2f5F55f27F37c54297718a812388',
     )
 
     const result = BigNumber.from(data.toString()).gte(
@@ -88,7 +88,7 @@ export async function increaseAllowance(tokenName, amount) {
 
     const tokenContractObj = await tokenContract(address)
     const data = await tokenContractObj.approve(
-      '0xc7a7651483c9a62d6f7b2baa86cd4708fab66017',
+      '0x4F4e508658Aa2f5F55f27F37c54297718a812388',
       toWei(amount),
     )
 
