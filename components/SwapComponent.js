@@ -135,17 +135,21 @@ const SwapComponent = () => {
 
   async function handleSwap() {
     if (srcToken === ETH && destToken !== ETH) {
-      performSwap()
+      performSwap();
     } else {
-      // Check whether there is allowance when the swap deals with tokenToEth/tokenToToken
-      setTxPending(true)
-      const result = await hasValidAllowance(address, srcToken, inputValue)
-      setTxPending(false)
-
-      if (result) performSwap()
-      else handleInsufficientAllowance()
+      setTxPending(true);
+      const allowanceSufficient = await hasValidAllowance(address, srcToken, toWei(inputValue));
+      setTxPending(false);
+  
+      if (!allowanceSufficient) {
+        handleInsufficientAllowance();
+        return;
+      }
+  
+      performSwap();
     }
   }
+  
 
   async function handleIncreaseAllowance() {
     // Increase the allowance
