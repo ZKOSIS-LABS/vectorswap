@@ -11,7 +11,7 @@ import {
 
 const Selector = ({ defaultValue, ignoreValue, setToken, id }) => {
   const menu = [
-    { key: VSG, name: VSG },
+    { key: ETH, name: ETH },
     { key: CoinA, name: CoinA },
     { key: CoinB, name: CoinB },
     { key: CoinC, name: CoinC },
