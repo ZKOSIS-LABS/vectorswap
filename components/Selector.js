@@ -2,19 +2,19 @@ import React, { useEffect, useState } from 'react'
 
 import { Dropdown } from '@nextui-org/react'
 import {
-  $MOB,
-  $XVX,
-  $XIX,
+  CoinA,
+  CoinB,
+  CoinC,
   DEFAULT_VALUE,
   ETH,
 } from '../utils/SupportedCoins'
 
 const Selector = ({ defaultValue, ignoreValue, setToken, id }) => {
   const menu = [
-    { key: ETH, name: ETH },
-    { key: $MOB, name: $MOB },
-    { key: $XVX, name: $XVX },
-    { key: $XIX, name: $XIX },
+    { key: ETH, name: VSG },
+    { key: CoinA, name: CoinA },
+    { key: CoinB, name: CoinB },
+    { key: CoinC, name: CoinC },
   ]
 
   const [selectedItem, setSelectedItem] = useState()
