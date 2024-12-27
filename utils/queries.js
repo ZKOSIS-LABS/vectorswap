@@ -2,12 +2,12 @@ import { BigNumber, ethers } from 'ethers'
 import { contract, tokenContract } from './contract'
 import { toEth } from './ether-utils'
 
-export async function swapEthToToken(tokenName, amount) {
+export async function swapVsgToToken(tokenName, amount) {
   try {
     let tx = { value: toWei(amount) }
 
     const contractObj = await contract()
-    const data = await contractObj.swapEthToToken(tokenName, tx)
+    const data = await contractObj.swapVsgToToken(tokenName, tx)
 
     const receipt = await data.wait()
     return receipt
@@ -24,7 +24,7 @@ export async function hasValidAllowance(owner, tokenName, amount) {
     const tokenContractObj = await tokenContract(address)
     const data = await tokenContractObj.allowance(
       owner,
-      '0x28bEac160b339d4eAF9778ac27A7eb283F2F4DEC',
+      '0x7C994468Cd2E3060b92B764ab5004f110951BFED',
     )
 
     const result = BigNumber.from(data.toString()).gte(
@@ -37,7 +37,7 @@ export async function hasValidAllowance(owner, tokenName, amount) {
   }
 }
 
-export async function swapTokenToEth(tokenName, amount) {
+export async function swapTokenToVsg(tokenName, amount) {
   try {
     // Check the user's allowance for the token first
     const owner = await getOwnerAddress();  // Get the user's wallet address
@@ -50,9 +50,9 @@ export async function swapTokenToEth(tokenName, amount) {
 
     // Now, proceed with the swap
     const contractObj = await contract();
-    const data = await contractObj.swapTokenToEth(
+    const data = await contractObj.swapTokenToVsg(
       tokenName,
-      toWei(amount),  // Ensure the amount is in the right units
+      amount,  // Ensure the amount is in the right units
     );
 
     const receipt = await data.wait();
@@ -62,14 +62,13 @@ export async function swapTokenToEth(tokenName, amount) {
   }
 }
 
-
 export async function swapTokenToToken(srcToken, destToken, amount) {
   try {
     const contractObj = await contract()
     const data = await contractObj.swapTokenToToken(
       srcToken,
       destToken,
-      toWei(amount),
+      amount,
     )
 
     const receipt = await data.wait()
@@ -80,9 +79,13 @@ export async function swapTokenToToken(srcToken, destToken, amount) {
 }
 
 export async function getTokenBalance(tokenName, address) {
-  const contractObj = await contract()
-  const balance = contractObj.getBalance(tokenName, address)
-  return balance
+  try {
+    const contractObj = await contract()
+    const balance = await contractObj.getBalance(tokenName, address)
+    return balance
+  } catch (e) {
+    return parseErrorMsg(e)
+  }
 }
 
 export async function getTokenAddress(tokenName) {
@@ -102,7 +105,7 @@ export async function increaseAllowance(tokenName, amount) {
 
     const tokenContractObj = await tokenContract(address)
     const data = await tokenContractObj.approve(
-      '0x28bEac160b339d4eAF9778ac27A7eb283F2F4DEC',
+      '0x7C994468Cd2E3060b92B764ab5004f110951BFED',
       (amount),
     )
 

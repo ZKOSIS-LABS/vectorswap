@@ -1,5 +1,5 @@
 import { ethers } from 'ethers'
-import CustomDexABI from '../utils/CustomDex.json'
+import MoonBoysSwapABI from '../utils/MoonBoysSwap.json'
 import CustomTokenABI from '../utils/CustomToken.json'
 
 export const tokenContract = async address => {
@@ -23,8 +23,8 @@ export const contract = async () => {
     const signer = provider.getSigner()
 
     const contractReader = new ethers.Contract(
-      '0x28bEac160b339d4eAF9778ac27A7eb283F2F4DEC',
-      CustomDexABI.abi,
+      '0x7C994468Cd2E3060b92B764ab5004f110951BFED',
+      MoonBoysSwapABI.abi,
       signer,
     )
 
